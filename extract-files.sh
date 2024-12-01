@@ -87,12 +87,6 @@ function blob_fixup_dry() {
     blob_fixup "$1" ""
 }
 
-function prepare_firmware() {
-    if [ "${SRC}" != "adb" ]; then
-        bash "${ANDROID_ROOT}"/lineage/scripts/pixel/prepare-firmware.sh "${DEVICE}" "${SRC}"
-    fi
-}
-
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
@@ -140,10 +134,6 @@ if [ -z "${ONLY_FIRMWARE}" ]; then
     set_module_suffix "vendor/lib64/com.google.edgetpu_vendor_service-V2-ndk.so" "-vendor" "${VENDOR_TXT}"
 
     extract "${MY_DIR}/proprietary-files-vendor.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-fi
-
-if [ -z "${SECTION}" ]; then
-    extract_firmware "${MY_DIR}/proprietary-firmware.txt" "${SRC}"
 fi
 
 "${MY_DIR}/setup-makefiles.sh"
