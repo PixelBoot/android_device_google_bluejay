@@ -34,6 +34,9 @@ PRODUCT_MANUFACTURER := Google
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
+# Face unlock
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
 # Keep the VNDK APEX in /system partition for REL branches as these branches are
 # expected to have stable API/ABI surfaces.
 ifneq (REL,$(PLATFORM_VERSION_CODENAME))
