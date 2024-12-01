@@ -17,14 +17,30 @@
 $(call inherit-product, device/google/gs101/aosp_common.mk)
 $(call inherit-product, device/google/bluejay/device-bluejay.mk)
 
+# Inherit some common pb stuff.
+$(call inherit-product, vendor/pb/config/common_full_phone.mk)
+
+# Inherit device configuration
+$(call inherit-product, device/google/gs101/aosp_common.mk)
+$(call inherit-product, device/google/bluejay/device-custom.mk)
+
 PRODUCT_NAME := aosp_bluejay
 PRODUCT_DEVICE := bluejay
-PRODUCT_MODEL := AOSP on Bluejay
-PRODUCT_BRAND := Android
+PRODUCT_MODEL := Pixel 6a
+PRODUCT_BRAND := google
 PRODUCT_MANUFACTURER := Google
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
 
 # Keep the VNDK APEX in /system partition for REL branches as these branches are
 # expected to have stable API/ABI surfaces.
 ifneq (REL,$(PLATFORM_VERSION_CODENAME))
   PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
 endif
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_PRODUCT=bluejay
+
+$(call inherit-product, vendor/google/bluejay/bluejay-vendor.mk)
