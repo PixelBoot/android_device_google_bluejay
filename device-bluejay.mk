@@ -90,6 +90,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/google/bluejay/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
+# Bluetooth Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    bluetooth.hardware.power.operating_voltage_mv=3850
+
 # Camera
 PRODUCT_COPY_FILES += \
 	device/google/bluejay/media_profiles_bluejay.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
