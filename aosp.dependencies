@@ -1,0 +1,18 @@
+[
+  {
+    "repository": "android_device_google_gs101",
+    "target_path": "device/google/gs101",
+    "branch":"unity"
+  },
+  {
+    "repository": "android_device_google_bluejay-kernel",
+    "target_path": "device/google/bluejay-kernel",
+    "branch":"unity"
+  },
+  {
+    "repository":"android_vendor_google_bluejay",
+    "target_path":"vendor/google/bluejay",
+    "branch":"unity",
+    "remote":"pixelbuilds-blobs-gitlab"
+   }
+]
