@@ -17,9 +17,6 @@
 # Restrict the visibility of Android.bp files to improve build analysis time
 $(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
 
-TARGET_KERNEL_DIR ?= device/google/bluejay-kernel
-TARGET_BOARD_KERNEL_HEADERS := device/google/bluejay-kernel/kernel-headers
-
 ifdef RELEASE_GOOGLE_BLUEJAY_KERNEL_VERSION
 TARGET_LINUX_KERNEL_VERSION := $(RELEASE_GOOGLE_BLUEJAY_KERNEL_VERSION)
 endif
