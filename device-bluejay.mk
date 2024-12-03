@@ -28,17 +28,10 @@ include device/google/gs101/fingerprint/extension/fingerprint.extension.mk
 include device/google/bluejay/sepolicy/bluejay-sepolicy.mk
 include device/google/bluejay/audio/bluejay/audio-tables.mk
 include device/google/gs101/device-shipping-common.mk
-include device/google/gs101/fingerprint/udfps_common.mk
 include device/google/gs101/telephony/pktrouter.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/stm/stm11.mk
-
-ifeq ($(filter factory_bluejay, $(TARGET_PRODUCT)),)
-include device/google/gs101/fingerprint/udfps_shipping.mk
-else
-include device/google/gs101/fingerprint/udfps_factory.mk
-endif
 
 # go/lyric-soong-variables
 $(call soong_config_set,lyric,camera_hardware,bluejay)
